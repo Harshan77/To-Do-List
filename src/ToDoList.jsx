@@ -22,6 +22,10 @@ function ToDoList(){
         
     }
 
+    function moveTaskDown(index){
+        
+    }
+
     return(
         <div className="to-do-list">
             <h1>To-Do-List</h1>
@@ -35,11 +39,13 @@ function ToDoList(){
         <ol>
             {tasks.map((task,index) => 
             <li key={index}>
-            {task}
+            <span className="text">{task}</span>
+            <button className="delete-button" onClick={()=>deleteTask(index)}>Delete</button>
+            <button className="move-button" onClick={()=>moveTaskUp(index)}>MoveUp</button>
+            <button className="move-button" onClick={()=>moveTaskDown(index)}>MoveDown</button>
             </li>)}
         </ol>
-        <button className="delete-button" onClick={()=>deleteTask(index)}>Delete</button>
-        <button className="move-button" onClick={()=>moveTaskUp(index)}>Delete</button>
+       
 
         </div>
     )
