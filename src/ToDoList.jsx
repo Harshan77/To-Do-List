@@ -11,20 +11,37 @@ function ToDoList(){
 
     function addTask()
     {
-        setTasks(t => [...t,newTask])
+        if(newTask.trim() !=="")
+        {
+        setTasks(t => [...t,newTask]);
+        }
+        setNewTask("");
     }
 
-    function deleteTask(index){
-
+    function deleteTask(index){               
+    const updateTasks=tasks.filter((_,i) => i!==index);
+    setTasks(updateTasks);
     }
 
     function moveTaskUp(index){
-        
+        if(index>0){
+        const updateTasks=[...tasks];
+        [updateTasks[index],updateTasks[index-1]]=
+        [updateTasks[index-1],updateTasks[index]]
+        setTasks(updateTasks);
+        }
     }
 
     function moveTaskDown(index){
-        
+        if(index<tasks.length-1){
+        const updateTasks=[...tasks];
+        [updateTasks[index+1],updateTasks[index]]=
+        [updateTasks[index],updateTasks[index+1]]
+        setTasks(updateTasks);
+        }
     }
+
+   
 
     return(
         <div className="to-do-list">
