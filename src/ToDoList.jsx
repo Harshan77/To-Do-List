@@ -9,9 +9,9 @@ function ToDoList(){
         setNewTask(e.target.value);
     }
 
-    function addTask(index)
+    function addTask()
     {
-
+        setTasks(t => [...t,newTask])
     }
 
     function deleteTask(index){
@@ -30,7 +30,7 @@ function ToDoList(){
         <div className="to-do-list">
             <h1>To-Do-List</h1>
         <div>
-            <input type="text"
+            <input type="text" id="inputTask"
             placeholder="Enter a Task"
             value={newTask}
             onChange={handleInputChange}/>

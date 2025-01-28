@@ -21,6 +21,8 @@ button{
 
 .add-button{
   background-color: hsl(120, 68%, 37%);
+  font-size: 15px;
+  padding: 5px;
 }
 
 .add-button:hover{
@@ -43,3 +45,35 @@ button{
   background-color: hsl(241, 62%, 23%);
 }
 
+input [type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid rgb(17, 18, 17);
+  
+}
+
+ol{
+  padding: 0;
+}
+
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 10px;
+  border: 3px solid rgb(190, 176, 176);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.text{
+  flex: 1;
+}
+
+.delete-button, .move-button{
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
